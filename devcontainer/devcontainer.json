@@ -1,0 +1,12 @@
+{
+  "name": "Ambiente Dev Douglas",
+  
+  "settings": {
+    "workbench.colorTheme": "Dracula",
+    "editor.fontSize": 15,
+    "editor.formatOnSave": true,
+    "editor.tabSize": 2,
+    "files.autoSave": "afterDelay"
+  }
+
+}
