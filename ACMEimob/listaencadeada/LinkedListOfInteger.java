@@ -99,19 +99,31 @@ public class LinkedListOfInteger {
         return null;
     }
     public void add(int index, Integer element) {
-        Node atual = head;
-        int contador = 0;
-        Node aux = new Node(element);
+    Node novo = new Node(element);
 
-        while (atual != null) {
-            if (contador==index-1){  
-                atual.next = aux;   
-            }  
-            atual = atual.next;
-            contador++;
+    // Caso 1: inserir no início
+    if (index == 0) {
+        novo.next = head;
+        head = novo;
+        return;
+    }
+
+    Node atual = head;
+    int contador = 0;
+
+    // Percorrer até o nó anterior ao índice
+    while (atual != null) {
+        if (contador == index - 1) {
+            novo.next = atual.next;
+            atual.next = novo;
+            return;
         }
+        atual = atual.next;
+        contador++;
+    }
 
-
+    // Caso índice inválido
+    throw new IndexOutOfBoundsException("Índice fora do tamanho da lista");
     }
     public boolean contains(Integer element) {
         Node atual = head;

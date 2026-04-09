@@ -18,6 +18,7 @@ public class App {
         //System.out.println("Elemento na pos 3 é " + lista.get(1));
         
         lista.add(1,30);
+        lista.add(0,50);
         System.out.println(lista);
         //System.out.println("Contém o elemento 30? " + lista.contains(30));
         // System.out.println("Contém o elemento 9? " + lista.contains(2));
