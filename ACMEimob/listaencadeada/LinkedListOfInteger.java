@@ -35,11 +35,7 @@ public class LinkedListOfInteger {
     /**
      * Esvazia a lista
      */
-    public void clear() {
-        head = null;
-        tail = null;
-        count = 0;
-    }
+    
 
     /**
      * Adiciona um elemento ao final da lista.
@@ -102,20 +98,60 @@ public class LinkedListOfInteger {
         }
         return null;
     }
-    // tentar fazer
-    public void switchElement(Integer element) {
+    public void add(int index, Integer element) {
         Node atual = head;
         int contador = 0;
+        Node aux = new Node(element);
 
         while (atual != null) {
-            if (element == atual.element) {
-                atual.element = element;
-            }
+            if (contador==index-1){  
+                atual.next = aux;   
+            }  
             atual = atual.next;
             contador++;
         }
 
+
     }
+    public boolean contains(Integer element) {
+        Node atual = head;
+        int contador = 0;
+
+        while (atual != null) {
+            if (atual.element.equals(element)) {
+                return true;
+            }
+            atual = atual.next;
+            contador++;
+        }
+        return false;
+        
+    }
+
+
+    public Integer switchElement(int index, Integer element) {
+        Node atual = head;
+        int contador = 0;
+
+        while (atual != null) {
+            if (contador == index) {
+                atual.element=element;
+                return atual.element;
+            }
+            atual = atual.next;
+            contador++;
+        }
+        return null;
+    }
+
+    public void clear() {
+        head = null;
+        tail = null;
+        count = 0;
+    }
+
+
+
     // 1 - implemente o método isEmpty
     /*
      * Retorna true se a lista nao contem elementos.

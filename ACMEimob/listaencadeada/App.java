@@ -14,11 +14,15 @@ public class App {
         lista.add(10);
         lista.add(12);
         System.out.println(lista);
-        System.out.println("--> Elementos adicionados com sucesso!");
-        System.out.println("Elemento na pos 3 é " + lista.get(1));
-        lista.switchElement(8,)
-        System.out.println("Tamanho da lista: " + lista.size());
-        System.out.println("Lista Vazia? " + lista.isEmpty());
+        //System.out.println("--> Elementos adicionados com sucesso!");
+        //System.out.println("Elemento na pos 3 é " + lista.get(1));
+        
+        lista.add(1,30);
+        System.out.println(lista);
+        //System.out.println("Contém o elemento 30? " + lista.contains(30));
+        // System.out.println("Contém o elemento 9? " + lista.contains(2));
+        //System.out.println("Tamanho da lista: " + lista.size());
+        //System.out.println("Lista Vazia? " + lista.isEmpty());
 
         // System.out.println("Elemento armazenado na "
         // + "segunda posicao da lista: " +lista.get(1));
