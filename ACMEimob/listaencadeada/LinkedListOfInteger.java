@@ -98,10 +98,11 @@ public class LinkedListOfInteger {
         }
         return null;
     }
+    
     public void add(int index, Integer element) {
     Node novo = new Node(element);
 
-    // Caso 1: inserir no início
+    //inserir inicio
     if (index == 0) {
         novo.next = head;
         head = novo;
@@ -122,9 +123,12 @@ public class LinkedListOfInteger {
         contador++;
     }
 
-    // Caso índice inválido
+    // se indice for inválido
     throw new IndexOutOfBoundsException("Índice fora do tamanho da lista");
     }
+
+
+    
     public boolean contains(Integer element) {
         Node atual = head;
         int contador = 0;
