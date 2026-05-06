@@ -35,7 +35,6 @@ public class LinkedListOfInteger {
     /**
      * Esvazia a lista
      */
-    
 
     /**
      * Adiciona um elemento ao final da lista.
@@ -51,7 +50,18 @@ public class LinkedListOfInteger {
         }
         tail = n;
         count++;
+    }
 
+    public void addInicio(Integer element) {
+        Node n = new Node(element);
+        if (head == null) {
+            head = n;
+            tail = n;
+        } else {
+            n.next = head;
+            head = n;
+        }
+        count++;
     }
 
     @Override
@@ -98,37 +108,35 @@ public class LinkedListOfInteger {
         }
         return null;
     }
-    
+
     public void add(int index, Integer element) {
-    Node novo = new Node(element);
+        Node novo = new Node(element);
 
-    //inserir inicio
-    if (index == 0) {
-        novo.next = head;
-        head = novo;
-        return;
-    }
-
-    Node atual = head;
-    int contador = 0;
-
-    // Percorrer até o nó anterior ao índice
-    while (atual != null) {
-        if (contador == index - 1) {
-            novo.next = atual.next;
-            atual.next = novo;
+        // inserir inicio
+        if (index == 0) {
+            novo.next = head;
+            head = novo;
             return;
         }
-        atual = atual.next;
-        contador++;
+
+        Node atual = head;
+        int contador = 0;
+
+        // Percorrer até o nó anterior ao índice
+        while (atual != null) {
+            if (contador == index - 1) {
+                novo.next = atual.next;
+                atual.next = novo;
+                return;
+            }
+            atual = atual.next;
+            contador++;
+        }
+
+        // se indice for inválido
+        throw new IndexOutOfBoundsException("Índice fora do tamanho da lista");
     }
 
-    // se indice for inválido
-    throw new IndexOutOfBoundsException("Índice fora do tamanho da lista");
-    }
-
-
-    
     public boolean contains(Integer element) {
         Node atual = head;
         int contador = 0;
@@ -141,9 +149,8 @@ public class LinkedListOfInteger {
             contador++;
         }
         return false;
-        
-    }
 
+    }
 
     public Integer switchElement(int index, Integer element) {
         Node atual = head;
@@ -151,7 +158,7 @@ public class LinkedListOfInteger {
 
         while (atual != null) {
             if (contador == index) {
-                atual.element=element;
+                atual.element = element;
                 return atual.element;
             }
             atual = atual.next;
@@ -165,8 +172,6 @@ public class LinkedListOfInteger {
         tail = null;
         count = 0;
     }
-
-
 
     // 1 - implemente o método isEmpty
     /*
